@@ -22,7 +22,7 @@ const Login = () => {
     }
 
     const login = () => {
-        axios.post("http://localhost:3001/login", user)
+        axios.post("https://koiwai.herokuapp.com/login", user)
         .then(res => {alert(res.data.message);
         setLoginUser(res.data.user);
         navigate("/");

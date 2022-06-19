@@ -10,13 +10,13 @@ function App() {
 
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/getPosts").then((response) => {
+    Axios.get("https://koiwai.herokuapp.com/getPosts").then((response) => {
       setListOfPosts(response.data);
     });
   }, []); 
 
   const createPost = () => {
-    Axios.post("http://localhost:3001/createPost", {title, content}).then((response) => {
+    Axios.post("https://koiwai.herokuapp.com/createPost", {title, content}).then((response) => {
       setListOfPosts([...listOfPosts, {title, content}]);
     });
   };

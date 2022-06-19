@@ -20,7 +20,7 @@ const Register = () => {
         const {name, email, password} = user;
         if (name && email && password){
             try {
-                axios.post("http://localhost:3001/register", user )
+                axios.post("https://koiwai.herokuapp.com/register", user )
                 .then(res => console.log(res));
             }catch (error){
                 console.error(error.response.data);
