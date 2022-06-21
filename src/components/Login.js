@@ -21,10 +21,19 @@ const Login = () => {
         sessionStorage.setItem('activeUser', loginUser);
     }
 
+            //const login = () => {
+          //axios.post("https://koiwai.herokuapp.com/login", user)
+        //.then(res => {alert(res.data.message);
+      //  setLoginUser(res.data.user);
+    //    navigate("/");
+  //      })
+//    } 
     const login = () => {
         axios.post("https://koiwai.herokuapp.com/login", user)
         .then(res => {alert(res.data.message);
-        setLoginUser(res.data.user);
+        if (res.data.message === "login succesful"){
+            setLoginUser(res.data.user);
+        }
         navigate("/");
         })
     }
